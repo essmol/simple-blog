@@ -1,6 +1,15 @@
 Django==4.2
 djangorestframework
 djangorestframework-simplejwt
+python-decouple
 
+Django-allauth
+requests
 # Photo & Image
 Pillow
+
+
+# background proccess and cache
+celery
+redis
+django-redis

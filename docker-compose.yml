@@ -1,10 +1,23 @@
 version: '3.4'
 
 services:
-  simpleblog:
-    image: simpleblog
-    build:
-      context: .
-      dockerfile: ./Dockerfile
+  web:
+    build: .
+    container_name: web
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
     ports:
-      - 8000:8000
+      - "8000:8000"
+
+
+  # db:
+  #   image: postgres:14-alpine
+  #   ports:
+  #     - 5431:5431
+  #   volumes:
+  #     - ~/apps/postgres:/var/lib/postgresql/data
+  #   environment:
+  #     - POSTGRES_PASSWORD=S3cret
+  #     - POSTGRES_USER=citizix_user
+  #     - POSTGRES_DB=citizix_db    
