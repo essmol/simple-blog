@@ -6,6 +6,7 @@ from rest_framework.permissions import (
 )
 
 from ...models import Post, Category
+from .paginations import Pagination
 
 
 
@@ -15,6 +16,7 @@ from .permissions import IsOwnerOrReadOnly
 
 class PostListView(ModelViewSet):
     serializer_class = PostSerializer
+    pagination_class = Pagination
     permission_classes = [IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly]
     queryset = Post.objects.filter(status=True)
     

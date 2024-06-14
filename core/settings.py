@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # Third-party apps
     "rest_framework",
+    "drf_yasg",
     'django.contrib.sites',
     'allauth',
     'allauth.account',
@@ -93,6 +94,20 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# postgres sql
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'simple-blog',
+#         'USER': 'e_django',
+#         'PASSWORD': 'django-admin',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5432',
+#     }
+# }
+
 
 
 # Password validation

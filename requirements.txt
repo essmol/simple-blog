@@ -5,8 +5,16 @@ python-decouple
 
 Django-allauth
 requests
+drf-yasg[validation]
+django-allauth
+psycopg2-binary
+
 # Photo & Image
 Pillow
+
+
+# #db
+# psycopg2
 
 
 # background proccess and cache
