@@ -7,10 +7,10 @@ from . import views
 app_name = 'api-v1'
 
 router = DefaultRouter()
-router.register('post',views.PostListView, basename='posts')
+router.register('post',views.PostView, basename='post')
 router.register('category', views.CatetegoryViewSet, basename='category')
 urlpatterns = router.urls
 
 # urlpatterns = [
-#     path('po', include('allauth.urls'))
+#     path('', )
 # ]

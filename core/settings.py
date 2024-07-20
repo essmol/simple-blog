@@ -40,6 +40,8 @@ INSTALLED_APPS = [
 
     # Third-party apps
     "rest_framework",
+    'django_filters',
+    'rest_framework_swagger',  
     "drf_yasg",
     'django.contrib.sites',
     'allauth',
@@ -69,7 +71,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

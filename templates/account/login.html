@@ -1,0 +1,12 @@
+<!-- your_app/templates/account/login.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h2>ورود به حساب کاربری</h2>
+<form method="post" action="{% url 'account_login' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">ورود</button>
+</form>
+<p>هنوز حساب کاربری ندارید؟ <a href="{% url 'account_signup' %}">ثبت نام کنید</a></p>
+{% endblock %}
