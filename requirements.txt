@@ -12,7 +12,10 @@ django-filter
 
 # Photo & Image
 Pillow
-
+#refactoring 
+black
+flake8
+Faker
 
 # #db
 # psycopg2
