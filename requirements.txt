@@ -18,6 +18,10 @@ flake8
 Faker
 pytest
 pytest-django
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3bcb439 (..)
 
 # #db
 # psycopg2
