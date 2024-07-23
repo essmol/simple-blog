@@ -6,16 +6,16 @@ from django.contrib.auth import get_user_model
 # Create your models here.
 User = get_user_model()
 
+
 class Profile(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     image = models.ImageField()
     last_name = models.CharField(max_length=120, blank=True)
     first_name = models.CharField(max_length=200, blank=True)
     bio = models.TextField()
-    
+
     created_date = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-
 
     def __str__(self):
         return self.user.email

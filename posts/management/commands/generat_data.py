@@ -8,9 +8,9 @@ from django.contrib.auth import get_user_model
 from accounts.models import Profile
 from posts.models import Post, Category
 
-User=get_user_model()
+User = get_user_model()
 
-category_list = ["love", "Design", "Fun","life"]
+category_list = ["love", "Design", "Fun", "life"]
 
 
 class Command(BaseCommand):
@@ -21,7 +21,9 @@ class Command(BaseCommand):
         self.fake = Faker()
 
     def handle(self, *args, **options):
-        user = User.objects.create_user(username=self.fake.name(),email=self.fake.email(), password="Test@123456")
+        user = User.objects.create_user(
+            username=self.fake.name(), email=self.fake.email(), password="Test@123456"
+        )
         profile = Profile.objects.get(user=user)
         profile.first_name = self.fake.first_name()
         profile.last_name = self.fake.last_name()
