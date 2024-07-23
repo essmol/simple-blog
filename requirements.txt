@@ -16,6 +16,8 @@ Pillow
 black
 flake8
 Faker
+pytest
+pytest-django
 
 # #db
 # psycopg2
