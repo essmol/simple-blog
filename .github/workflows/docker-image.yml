@@ -17,4 +17,4 @@ jobs:
     - name: Build the Docker image
       run: docker-compose up -d
     - name: run Tests
-      run: docker-compose exec web sh -c 'flake8 && pytest .'
+      run: docker exec web sh -c 'flake8 && pytest .'
