@@ -44,8 +44,8 @@ schema_view = get_schema_view(
 urlpatterns = [
     path("admin/", admin.site.urls),
     # path('', index, name='index'),
-    path("account/", include("allauth.urls")),
     path("", include("posts.urls")),
+    path('account/', include('accounts.urls')),
     path(
         "swagger/output.json",
         schema_view.without_ui(cache_timeout=0),

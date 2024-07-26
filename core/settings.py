@@ -40,17 +40,19 @@ INSTALLED_APPS = [
     # Third-party apps
     "rest_framework",
     "django_filters",
-    
+    'corsheaders',
     "drf_yasg",
     "django.contrib.sites",
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
+    'django_celery_beat',
     # ... add any providers you want to use, e.g.
     # 'allauth.socialaccount.providers.google',
     # Your apps
     "accounts",
     "posts",
+    'comments',
 ]
 
 MIDDLEWARE = [
@@ -62,6 +64,8 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "allauth.account.middleware.AccountMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
+    
 ]
 
 ROOT_URLCONF = "core.urls"
@@ -169,3 +173,10 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+
+
+CORS_ALLOW_ALL_ORIGINS = True
+
+
+# celery configs
+CELERY_BROKER_URL = "redis://redis:6379/1"

@@ -8,6 +8,8 @@ requests
 drf-yasg[validation]
 django-allauth
 django-filter  
+django-cors-headers
+
 
 
 # Photo & Image
@@ -18,10 +20,6 @@ flake8
 Faker
 pytest
 pytest-django
-<<<<<<< HEAD
-=======
-
->>>>>>> 3bcb439 (..)
 
 # #db
 # psycopg2
