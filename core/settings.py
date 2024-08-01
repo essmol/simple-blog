@@ -158,7 +158,11 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",  # Default backend
     "allauth.account.auth_backends.AuthenticationBackend",  # Allauth backend
+
 ]
+
+# celery configs
+CELERY_BROKER_URL = "redis://redis:6379/1"
 
 SITE_ID = 1
 

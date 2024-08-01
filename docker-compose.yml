@@ -1,6 +1,19 @@
 version: '3.4'
 
+
+
 services:
+
+
+  redis:
+    container_name: redis
+    image: redis
+    restart: always
+    ports:
+    - "6379:6379"
+    command: redis-server --save 60 1 --loglevel warning
+  
+  
   web:
     build: .
     container_name: web
@@ -10,7 +23,14 @@ services:
     ports:
       - "8000:8000"
 
-
+  worker:
+    build: .
+    command: celery -A core worker --loglevel=info
+    volumes:
+      - .:/app
+    depends_on:
+      - redis
+      - web
   # db:
   #   image: postgres:14-alpine
   #   ports:
@@ -21,3 +41,4 @@ services:
   #     - POSTGRES_PASSWORD=django-admin
   #     - POSTGRES_USER=postgres
   #     - POSTGRES_DB=postgres    
+
