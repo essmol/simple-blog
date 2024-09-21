@@ -1,1 +1,1 @@
-a simple blog
+a simple blog with django RestFramework
